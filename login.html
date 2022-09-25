@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Login - ToDo App</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="./assets/img/agenda.png" alt="Logo ToDo App"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="main-menu">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Criar Conta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="login.html" id="loginMenuBtn">Login</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="d-flex flex-row user-data">
+                    <i class="bi bi-person-circle d-none" id="iconUser"></i>
+                    <div class="d-flex flex-column">
+                      <p id="userName"></p>
+                      <p id="userEmail"></p>
+                    </div>    
+                  </div>
+            </div>
+        </nav>
+    </header>
+    <main class="login">
+        <section class="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6 texto-intro">
+                        <img src="./assets/img/prancheta.png" alt="Logo ToDo App" class="logo">
+                        <h1>Seja bem vindo de volta!</h1>
+                    </div>
+                    <div class="col-12 col-lg-6 form-intro">
+                        <h1>Realize seu login</h1>
+                        <form name="formLogin" id="formLogin" class="form-data">
+                            <div class="form-floating">
+                                <input type="text" name="emailLogin" id="emailLogin" placeholder="E-mail"
+                                    class="form-control">
+                                <label for="emailLogin">E-mail</label>
+                            </div>
+
+                            <div class="form-floating">
+                                <input type="password" name="senhaLogin" id="senhaLogin" placeholder="Senha"
+                                    class="form-control">
+                                <label for="senhaLogin">Senha</label>
+                            </div>
+                            <button type="submit" class="button" id="loginBtn">Entrar</button>
+                        </form>
+                        <a href="index.html" class="btn-link">Não possui conta? Crie Já</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="modal fade" id="modalMessage" tabindex="-1" aria-labelledby="modalUpdateTaskLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalMessageTitle"></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <i class="bi" id="modalMessageIcon"></i>
+                  <p id="modalMessageBody"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </main>
+
+    <footer>
+        Desenvolvido em conjunto por - Matheus B. e Rafael B.
+    </footer>
+
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/account.js"></script>
+</body>
+
+</html>

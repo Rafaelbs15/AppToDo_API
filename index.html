@@ -1,49 +1,158 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Do App</title>
-
-  <!-- ---------------- estilos compartilhados entre login e signup ---------------- -->
-  <link rel="stylesheet" href="styles/acesso.css">
-
-  <!-- ---------------------- lógica aplicada no login ----------------------- -->
-  <script src="/scripts/utils.js"></script>
-  <script src="/scripts/index.js"></script>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>ToDo App - Criar Cadastro</title>
 </head>
 
 <body>
-  <div class="left">
-    <img src="./assets/pessoa-login.png" alt="">
-  </div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="./assets/img/agenda.png" alt="Logo ToDo App"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="main-menu">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#top">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#about">Sobre o App</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html" id="loginMenuBtn">Login</a>
+                        </li>
+                    </ul>
+                </div>
 
-  <div class="right">
-    <form>
-      <div class="form-header">
-        <p>To-Do App</p>
-      </div>
-      <h1>Acessar</h1>
-      <label>
-        Email:
-        <input id="inputEmail" type="email">
-      </label>
-      <label>
-        Senha:
-        <input id="inputPassword" type="password">
-      </label>
+                <div class="d-flex flex-row user-data">
+                    <i class="bi bi-person-circle d-none" id="iconUser"></i>
+                    <div class="d-flex flex-column">
+                      <p id="userName"></p>
+                      <p id="userEmail"></p>
+                    </div>    
+                  </div>
+            </div>
+        </nav>
+    </header>
+    <span id="top"></span>
+    <main>
+        <section class="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6 texto-intro">
 
-      <button type="submit">Acessar</button>
+                        <img src="./assets/img/tarefas.png" alt="Logo ToDo App" class="logo">
+                        <h1>Seja bem vindo(a) ao ToDo App</h1>
+                        <p><b>É muito fácil criar uma conta em nosso aplicativo</b></p>
+                        <ol class="step-create-account">
+                            <li>Insira seu nome e sobrenome</li>
+                            <li>Insira seu e-mail</li>
+                            <li>Escolha uma senha segura</li>
+                            <li>Aproveite nosso App!</li>
+                        </ol>
+                    </div>
 
-    </form>
-    <div class="ingressar">
-      <a href="signup.html">Não possui conta? Crie agora mesmo</a>
-    </div>
-  </div>
+                    <div class="col-12 col-lg-6 form-intro" id="createAccount">
+                        <h2>Crie sua conta</h2>
+                        <form name="formCreateAccount" id="formCreateAccount" class="form-data">
+                            <div class="form-floating">
+                                <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome">
+                                <label for="nome">Nome</label>
+                            </div>
 
+                            <div class="form-floating">
+                                <input type="text" name="sobrenome" id="sobrenome" class="form-control"
+                                    placeholder="Sobrenome">
+                                <label for="sobrenome">Sobrenome</label>
+                            </div>
+
+                            <div class="form-floating">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="E-mail">
+                                <label for="email">E-mail</label>
+                            </div>
+
+                            <div class="form-floating">
+                                <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha">
+                                <label for="senha">Senha</label>
+                            </div>
+
+                            <div class="form-floating">
+                                <input type="password" name="confirmaSenha" id="confirmaSenha" class="form-control"
+                                    placeholder="Confirme sua Senha">
+                                <label for="confirmaSenha">Confirme sua senha</label>
+                            </div>
+                            <button type="submit" class="button">Criar Conta</button>
+                        </form>
+                        <a href="login.html" class="btn-link">Já possui conta? Faça o Login</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="about" id="about">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
+                        <h1 class="mb-4">Para que serve?</h1>
+
+                        <p>Quantas vezes ao longo da semana você estava ciente de um compromisso, um trabalho, reunião e
+                            até mesmo aquele date e esqueceu porque estava focado em outra coisa ou porque é cabeça de
+                            vento? O ToDo App foi desenvolvido especialmente para que essas coisas não caiam no
+                            esquecimento, com uma interface simples e intuitiva, conseguimos te ajudar a organizar suas
+                            tarefas do dia a dia.</p>
+
+                        <p>Ainda não tem uma conta? Está esperando o que então para deixar de esquecer suas tarefas?</p>
+
+                        <a href="#createAccount" class="btn-link">Faça já sua conta</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de mensagem -->
+
+        <div class="modal fade" id="modalMessage" tabindex="-1" aria-labelledby="modalUpdateTaskLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalMessageTitle"></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <i class="bi" id="modalMessageIcon"></i>
+                  <p id="modalMessageBody"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+    </main>
+
+    <footer>
+        Desenvolvido em conjunto por - Matheus B. e Rafael B. 
+    </footer>
+
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/account.js"></script>
 </body>
 
 </html>
